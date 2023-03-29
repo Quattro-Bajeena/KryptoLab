@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\KryptoLab1BBS\KryptoLab1BBS.csproj" />
+    <ProjectReference Include="..\RSA\RSA.csproj" />
   </ItemGroup>
 
 </Project>

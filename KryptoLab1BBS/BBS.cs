@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using MathUtils;
+
 namespace KryptoLab1BBS
 {
     public class BBS
@@ -16,7 +18,7 @@ namespace KryptoLab1BBS
 
         public BBS()
         {
-            var sieve = Sieve(MaxPrime);
+            var sieve = Formulas.Sieve(MaxPrime);
             var primes = GetFittingPrimes(sieve, MinPrime, MaxPrime);
 
 
@@ -25,7 +27,7 @@ namespace KryptoLab1BBS
             
             N = p * q;
 
-            while (GCD(x, N) != 1)
+            while (Formulas.GCD(x, N) != 1)
             {
                 x = rnd.Next();
             }
@@ -44,50 +46,9 @@ namespace KryptoLab1BBS
             return primes;
         }
 
-        private bool[] Sieve(long max)
-        {
-            // Create an array of boolean values indicating whether a number is prime.
-            // Start by assuming all numbers are prime by setting them to true.
-            bool[] primes = new bool[max + 1];
-            for (long i = 0; i < primes.Length; i++)
-            {
-                primes[i] = true;
-            }
+        
 
-            // Loop through a portion of the array (up to the square root of MAX). If
-            // it's a prime, ensure all multiples of it are set to false, as they
-            // clearly cannot be prime.
-            for (long i = 2; i < Math.Sqrt(max) + 1; i++)
-            {
-                if (primes[i])
-                {
-                    for (long j = (long)Math.Pow(i, 2); j <= max; j += i)
-                    {
-                        primes[j] = false;
-                    }
-                }
-            }
-            return primes;
-        }
-
-        private long GCD(long m, long n)
-        {
-            var tmp = 0L;
-            if (m < n)
-            {
-                tmp = m;
-                m = n;
-                n = tmp;
-            }
-            while (n != 0)
-            {
-                tmp = m % n;
-                m = n;
-                n = tmp;
-            }
-            return m;
-        }
-
+      
 
         public List<int> GenerateBits(int length)
         {

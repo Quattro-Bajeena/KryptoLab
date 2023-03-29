@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.32804.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KryptoLab1BBS", "KryptoLab1BBS\KryptoLab1BBS.csproj", "{3EB1C89D-BAB0-4694-B711-96F862A6A87F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KryptoLab1BBS", "KryptoLab1BBS\KryptoLab1BBS.csproj", "{3EB1C89D-BAB0-4694-B711-96F862A6A87F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBBS", "TestBBS\TestBBS.csproj", "{1A66DAAC-1E3B-4467-987C-28844E7F28FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBBS", "TestBBS\TestBBS.csproj", "{1A66DAAC-1E3B-4467-987C-28844E7F28FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathUtils", "MathUtils\MathUtils.csproj", "{FF5A507A-3016-4023-96DB-DE9436125783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA", "RSA\RSA.csproj", "{290D72B5-540A-4318-9DAE-6BC73481292B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{1A66DAAC-1E3B-4467-987C-28844E7F28FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A66DAAC-1E3B-4467-987C-28844E7F28FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A66DAAC-1E3B-4467-987C-28844E7F28FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF5A507A-3016-4023-96DB-DE9436125783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF5A507A-3016-4023-96DB-DE9436125783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF5A507A-3016-4023-96DB-DE9436125783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF5A507A-3016-4023-96DB-DE9436125783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{290D72B5-540A-4318-9DAE-6BC73481292B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{290D72B5-540A-4318-9DAE-6BC73481292B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{290D72B5-540A-4318-9DAE-6BC73481292B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{290D72B5-540A-4318-9DAE-6BC73481292B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
