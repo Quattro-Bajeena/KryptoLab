@@ -59,12 +59,19 @@ namespace TestBBS
         public void SingleBitTest()
         {
             var sum = bits.Sum();
+            Console.WriteLine("Sum of bits: " + sum);
             Assert.IsTrue(9725 < sum && sum < 10275);
         }
 
         [TestMethod]
         public void SeriesTest()
         {
+            for(int i = 1; i < 7; i++)
+            {
+                Console.WriteLine("Series length " + i + ": " + series[i]);
+            }
+            
+
             Assert.IsTrue(2315 < series[1] && series[1] < 2685, "Series of length 1 should be between 2315 and 2685");
             Assert.IsTrue(1113 < series[2] && series[2] < 1386, "Series of length 2 should be between 1113 and 1386");
             Assert.IsTrue(527 < series[3] && series[3] < 723, "Series of length 3 should be between 527 and 723");
@@ -113,7 +120,13 @@ namespace TestBBS
             }
 
             var sum = segments.Values.ToArray().Sum(num => Math.Pow(num, 2) - 5000);
-            var x = (16f / 5000f) * segments.Values.ToArray().Sum( num => Math.Pow(num,2) - 5000);
+            var x = ((16f / 5000f) * segments.Values.ToArray().Sum( num => Math.Pow(num,2)))-5000;
+            
+            foreach(var segment in segments)
+            {
+                Console.WriteLine(segment.Key + ": " + segment.Value);
+            }
+            Console.WriteLine("Variable x: " + x);
             Assert.IsTrue(2.16 < x && x < 46.17, "x should be between 2.16 and 46.17");
             // doesnt make sense, if it was evenly distributed among all combinations, x would be 4744.
         }
