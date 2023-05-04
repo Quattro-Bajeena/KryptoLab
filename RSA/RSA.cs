@@ -26,7 +26,7 @@ namespace RSA
 	{
 		static Random random = new Random();
 
-		public static Tuple<PublicKey, PrivateKey> GenerateKeys(int p, int q, int bits) {
+		public static Tuple<PublicKey, PrivateKey> GenerateKeys(int p, int q, int bits=32) {
 			var n = p * q;
 			var phi = (p-1) * (q-1);
 
@@ -37,7 +37,7 @@ namespace RSA
 			}
 
 			var d = random.Next();
-			while ( ( (e * d - 1) % phi) != 0)
+			while ( ( ( (long)e * d - 1) % phi) != 0)
 			{
 				d = random.Next();
 			}
@@ -49,22 +49,35 @@ namespace RSA
 
 		}
 
-		public static byte[] Encrypt(string message, PublicKey pubKey)
+		public static BigInteger Encrypt(byte[] message, PublicKey pubKey)
 		{
-			var messageRaw = new BigInteger(Encoding.UTF8.GetBytes(message));
+			var messageRaw = new BigInteger(message);
 			var encrypted = BigInteger.ModPow(messageRaw, pubKey.e, pubKey.n);
-			return encrypted.ToByteArray();
+			
+			return encrypted;
 		}
 
-		public static string Decrypt(byte[] encryptedMessage, PrivateKey privKey)
+        public static BigInteger EncryptByte(byte message, PublicKey pubKey)
+        {
+            var encrypted = BigInteger.ModPow(message, pubKey.e, pubKey.n);
+            return encrypted;
+        }
+
+        public static byte[] Decrypt(BigInteger encryptedMessage, PrivateKey privKey)
 		{
-			var encryptedMessageRaw = new BigInteger(encryptedMessage);
-			var decryptedRaw = BigInteger.ModPow(encryptedMessageRaw, privKey.d, privKey.n);
-			return Encoding.UTF8.GetString(decryptedRaw.ToByteArray());
+			var decryptedRaw = BigInteger.ModPow(encryptedMessage, privKey.d, privKey.n);
+			var decryptedBytes = decryptedRaw.ToByteArray();
+            return decryptedBytes;
 		}
 
+        public static byte DecryptByte(BigInteger encryptedMessage, PrivateKey privKey)
+        {
+            var decryptedRaw = BigInteger.ModPow(encryptedMessage, privKey.d, privKey.n);
+            return (byte)decryptedRaw;
+        }
 
 
 
-	}
+
+    }
 }

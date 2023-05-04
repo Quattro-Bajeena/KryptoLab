@@ -18,35 +18,54 @@ namespace TestBBS
 		PublicKey publicKey;
 		PrivateKey privateKey;
 
-		const int p = 1423;
-		const int q = 8641;
-		const int keyLengthBits = 32;
-		const int messageLength = 50;
+		const int p = 31;
+		const int q = 19;
 
 		public RSATest() 
 		{
-			(PublicKey publicKey, PrivateKey privateKey) = RSA.RSA.GenerateKeys(p, q, keyLengthBits);
+			(PublicKey publicKey, PrivateKey privateKey) = RSA.RSA.GenerateKeys(p, q);
 			this.publicKey = publicKey;
 			this.privateKey = privateKey;
 
-		}
+            //this.publicKey = new PublicKey { e = 7, n = 589};
+            //this.privateKey = new PrivateKey { d = 463, n = 589};
 
-		static string RandomString(int length)
-		{
-			const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-			return new string(Enumerable.Repeat(chars, length)
-				.Select(s => s[random.Next(s.Length)]).ToArray());
-		}
+        }
 
 		[TestMethod]
 		public void EncryptDecrypt()
 		{
-			var message = RandomString(messageLength);
-			message = "ab";
+			var message = "This is random message";
 
-			var encrypted = RSA.RSA.Encrypt(message, publicKey);
-			var decrypted = RSA.RSA.Decrypt(encrypted, privateKey);
-			Assert.AreEqual(message, decrypted);
+			var message_bytes = ASCIIEncoding.ASCII.GetBytes(message);
+
+			var encrypted = new BigInteger[message.Length];
+            var decrypted = new byte[message.Length];
+
+			//var encrypted_ = RSA.RSA.Encrypt(message_bytes, publicKey);
+			//var decrypted_ = RSA.RSA.Decrypt(encrypted_, privateKey);
+
+			for (int i = 0; i < encrypted.Length; i++)
+			{
+                encrypted[i] = RSA.RSA.EncryptByte(message_bytes[i], publicKey);
+
+            }
+            
+            for (int i = 0; i < encrypted.Length; i++)
+            {
+                decrypted[i] = RSA.RSA.DecryptByte(encrypted[i], privateKey);
+            }
+
+			var message_decrypted = ASCIIEncoding.ASCII.GetString(decrypted);
+			
+            Assert.AreEqual(message, message_decrypted);
 		}
-	}
+
+        static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+    }
 }

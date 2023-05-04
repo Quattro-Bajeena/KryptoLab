@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KryptoLab1BBS", "KryptoLab1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestBBS", "TestBBS\TestBBS.csproj", "{1A66DAAC-1E3B-4467-987C-28844E7F28FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathUtils", "MathUtils\MathUtils.csproj", "{FF5A507A-3016-4023-96DB-DE9436125783}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathUtils", "MathUtils\MathUtils.csproj", "{FF5A507A-3016-4023-96DB-DE9436125783}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSA", "RSA\RSA.csproj", "{290D72B5-540A-4318-9DAE-6BC73481292B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSA", "RSA\RSA.csproj", "{290D72B5-540A-4318-9DAE-6BC73481292B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DH", "DH\DH.csproj", "{16934A93-0786-45EA-918E-C215890BBD35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{290D72B5-540A-4318-9DAE-6BC73481292B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{290D72B5-540A-4318-9DAE-6BC73481292B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{290D72B5-540A-4318-9DAE-6BC73481292B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16934A93-0786-45EA-918E-C215890BBD35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16934A93-0786-45EA-918E-C215890BBD35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16934A93-0786-45EA-918E-C215890BBD35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16934A93-0786-45EA-918E-C215890BBD35}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

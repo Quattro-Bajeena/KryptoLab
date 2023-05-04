@@ -110,7 +110,6 @@ namespace MathUtils
 			int numberOfRabinTrials = 200;
 			for (int i = 0; i < (numberOfRabinTrials); i++)
 			{
-				var rand = new Random();
 				var round_tester = random.Next(2, miller_rabin_candidate);
 
 				if (TrialComposite(round_tester, evenComponent,
