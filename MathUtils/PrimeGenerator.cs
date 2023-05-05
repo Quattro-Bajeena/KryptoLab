@@ -11,7 +11,7 @@ namespace MathUtils
 {
 
 
-	public static class BigPrimeGenerator
+	public static class PrimeGenerator
 	{
 
 		static RandomNumberGenerator rng = RandomNumberGenerator.Create();
@@ -31,7 +31,7 @@ namespace MathUtils
 		public static int RandomPrime()
 		{
 			var num = random.Next();
-			while (IsMillerRabinPassed(num) == false)
+			while (Formulas.IsPrime(num) == false)
 			{
 				num = random.Next();
 			}

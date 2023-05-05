@@ -30,10 +30,10 @@ namespace RSA
 			var n = p * q;
 			var phi = (p-1) * (q-1);
 
-			var e = BigPrimeGenerator.RandomPrime();
+			var e = PrimeGenerator.RandomPrime();
 			while(Formulas.GCD(phi, e) != 1)
 			{
-				e = BigPrimeGenerator.RandomPrime();
+				e = PrimeGenerator.RandomPrime();
 			}
 
 			var d = random.Next();

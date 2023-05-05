@@ -67,14 +67,33 @@ namespace MathUtils
 			return primes;
 		}
 
-		public bool IsPrime(long number)
+		public static bool IsPrime(int n)
 		{
-			if(number % 2 == 0)
-				return false;
-			for(int i = 3; i < Math.Sqrt(number); i++)
+			// Corner cases
+			if (n <= 1)
 			{
-				if(number % i == 0) return false;
+				return false;
 			}
+			if (n <= 3)
+			{
+				return true;
+			}
+
+			// This is checked so that we can skip
+			// middle five numbers in below loop
+			if (n % 2 == 0 || n % 3 == 0)
+			{
+				return false;
+			}
+
+			for (int i = 5; i * i <= n; i = i + 6)
+			{
+				if (n % i == 0 || n % (i + 2) == 0)
+				{
+					return false;
+				}
+			}
+
 			return true;
 		}
 

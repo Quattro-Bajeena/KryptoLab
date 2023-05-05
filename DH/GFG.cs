@@ -3,46 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MathUtils;
 
 namespace DH
 {
-    static class GFG
+    public static class GFG
     {
 
-        // Returns true if n is prime
-        static bool IsPrime(int n)
-        {
-            // Corner cases
-            if (n <= 1)
-            {
-                return false;
-            }
-            if (n <= 3)
-            {
-                return true;
-            }
-
-            // This is checked so that we can skip
-            // middle five numbers in below loop
-            if (n % 2 == 0 || n % 3 == 0)
-            {
-                return false;
-            }
-
-            for (int i = 5; i * i <= n; i = i + 6)
-            {
-                if (n % i == 0 || n % (i + 2) == 0)
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
 
         /* Iterative Function to calculate (x^n)%p in
         O(logy) */
-        static int PowerMod(int x, int y, int p)
+        static int ModularPow(int x, int y, int p)
         {
             int res = 1;     // Initialize result
 
@@ -100,7 +71,7 @@ namespace DH
             HashSet<int> s = new HashSet<int>();
 
             // Check if n is prime or not
-            if (IsPrime(n) == false)
+            if ( Formulas.IsPrime(n) == false)
             {
                 return -1;
             }
@@ -125,7 +96,7 @@ namespace DH
 
                     // Check if r^((phi)/primefactors) mod n
                     // is 1 or not
-                    if (PowerMod(r, phi / (a), n) == 1)
+                    if (ModularPow(r, phi / (a), n) == 1)
                     {
                         flag = true;
                         break;
