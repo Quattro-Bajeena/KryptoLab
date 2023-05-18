@@ -4,8 +4,6 @@ Autor: *Mateusz Oleszek*, nr. 144608
 
 Wybrane funkcje do testowania: MD5, SHA-1, SHA-3
 
-
-
 ## Skrót za pomocą różnych algorytmów
 
 ![](F:\Programowanie\Studia\KryptoLab\screenshots\Screenshot_6151_WindowsTerminal-2023_05_05-15_23.png)
