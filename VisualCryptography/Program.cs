@@ -121,8 +121,8 @@ namespace VisualCryptography
 			}
 
 			// save image to file or stream
-			share1.Save("edited.phg", ImageFormat.Png);
-			share2.Save("edited.phg", ImageFormat.Png);
+			share1.Save("edited.png", ImageFormat.Png);
+			share2.Save("edited.png", ImageFormat.Png);
 		}
 
 	}
