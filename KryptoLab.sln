@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RSA", "RSA\RSA.csproj", "{2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DH", "DH\DH.csproj", "{16934A93-0786-45EA-918E-C215890BBD35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashing", "Hashing\Hashing.csproj", "{519075D2-74C3-4545-A752-6FA90A142E01}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hashing", "Hashing\Hashing.csproj", "{519075D2-74C3-4545-A752-6FA90A142E01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlockCiphers", "BlockCiphers\BlockCiphers.csproj", "{DB1C3278-80DC-4F95-A2F3-6DB746A574C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlockCiphers", "BlockCiphers\BlockCiphers.csproj", "{DB1C3278-80DC-4F95-A2F3-6DB746A574C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualCryptography", "VisualCryptography\VisualCryptography.csproj", "{0AB17576-289F-4867-9F17-B44F7296F834}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisualCryptography", "VisualCryptography\VisualCryptography.csproj", "{0AB17576-289F-4867-9F17-B44F7296F834}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +49,14 @@ Global
 		{519075D2-74C3-4545-A752-6FA90A142E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{519075D2-74C3-4545-A752-6FA90A142E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{519075D2-74C3-4545-A752-6FA90A142E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1C3278-80DC-4F95-A2F3-6DB746A574C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB1C3278-80DC-4F95-A2F3-6DB746A574C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1C3278-80DC-4F95-A2F3-6DB746A574C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1C3278-80DC-4F95-A2F3-6DB746A574C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AB17576-289F-4867-9F17-B44F7296F834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB17576-289F-4867-9F17-B44F7296F834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB17576-289F-4867-9F17-B44F7296F834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB17576-289F-4867-9F17-B44F7296F834}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
